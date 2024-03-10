@@ -1,6 +1,4 @@
 @charset "utf-8";
-
-/* 3단계 */
 * {
   margin: 0px;
   padding: 0px;
@@ -16,14 +14,6 @@ a {
   outline: 0;
 }
 
-figure {
-  width: 100%;
-  height: 100vh;
-  min-height: 600px;
-  overflow: hidden;
-  position: relative;
-  background: linear-gradient(25deg, violet, pink);
-}
 figure h1 {
   position: absolute;
   top: 7vh;
@@ -63,7 +53,6 @@ figure > p {
   opacity: 0.8;
 }
 
-/* 4단계 */
 figure section {
   /*음악 플레이어 패널 프레임 그룹*/
   width: 20vw;
@@ -73,7 +62,7 @@ figure section {
   top: 140%;
   margin-top: -25vh;
   margin-left: -10vw;
-  transition: 1s; /* 11단계 */
+  transition: 1s;
 }
 figure section article {
   /*개별 음악 플레이어 패널*/
@@ -88,29 +77,10 @@ figure section article .txt .icon {
   width: 15px;
 }
 
-figure section article .inner {
-  /*음악 플레이어 패널 콘텐츠 그룹*/
-  width: 100%;
-  height: 100%;
-  background: #f0f7ff;
-  padding: 5vh 2.5vw 8vh;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-content: space-between; /*자식 콘텐츠의 안쪽 세로 여백을 균등 배치*/
-  flex-wrap: wrap;
-  border-radius: 10px;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
-  opacity: 0.6; /*투명도를 낮춰서 비활성화*/
-  transform: scale(0.8); /*축소시켜서 비솰성화*/
-  transition: opacity 1s, transform 1s; /* 7단계 */
-}
 figure section article.on .inner {
-  opacity: 0.9; /* 7단계 */
-  transform: scale(1.1); /* 7단계 */
+  opacity: 0.9;
+  transform: scale(1.1);
 }
-
-/* 8단계 */
 figure section article .inner .pic {
   width: 15vw;
   height: 15vw;
@@ -153,22 +123,16 @@ figure section article .inner .pic .dot {
   box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* 9단계 */
 figure section article .inner .txt {
   text-align: center;
   position: relative;
   z-index: 3;
 }
 figure section article .inner .txt h2 {
-  font-size: 20px;
-  font-family: "arial";
-  color: #222;
   margin-bottom: 2vh;
 }
 figure section article .inner .txt p {
-  font-size: 12px;
   margin-bottom: 3vh;
-  color: #777;
 }
 figure section article .inner .txt ul {
   display: flex;
@@ -192,7 +156,6 @@ figure section article .inner .txt ul li.play:hover {
   opacity: 1;
 }
 
-/* 10단계 */
 @keyframes ani {
   0% {
     transform: rotate(0deg);
@@ -217,7 +180,6 @@ figure section article .inner .pic.on::before {
   animation: ani2 4s linear infinite;
 }
 
-/* 11단계 */
 figure .btnPrev {
   width: 60px;
   height: 60px;
@@ -230,39 +192,7 @@ figure .btnPrev {
   text-align: left;
   cursor: pointer;
 }
-figure .btnPrev span {
-  font: 11px/1 "arial";
-  color: #fff;
-  opacity: 1;
-  transform: translateX(30%);
-  transition: 0.5s;
-}
-figure .btnPrev::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: #fff;
-  position: absolute;
-  top: 50%;
-  left: 0px;
-  transform-origin: left center;
-  transform: rotate(-180deg);
-  transition: 0.5s;
-}
-figure .btnPrev::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: #fff;
-  position: absolute;
-  bottom: 50%;
-  left: 0px;
-  transform-origin: left center;
-  transform: rotate(180deg);
-  transition: 0.5s;
-}
+
 figure .btnPrev:hover span {
   opacity: 0;
   transform: translateX(100%);
@@ -285,39 +215,6 @@ figure .btnNext {
   text-align: right;
   cursor: pointer;
 }
-figure .btnNext span {
-  font: 11px/1 "arial";
-  color: #fff;
-  opacity: 1;
-  transform: translateX(-30%);
-  transition: 0.5s;
-}
-figure .btnNext::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: #fff;
-  position: absolute;
-  top: 50%;
-  left: 0px;
-  transform-origin: right center;
-  transform: rotate(180deg);
-  transition: 0.5s;
-}
-figure .btnNext::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: #fff;
-  position: absolute;
-  bottom: 50%;
-  left: 0px;
-  transform-origin: right center;
-  transform: rotate(-180deg);
-  transition: 0.5s;
-}
 figure .btnNext:hover span {
   opacity: 0;
   transform: translateX(-100%);
@@ -327,4 +224,163 @@ figure .btnNext:hover::before {
 }
 figure .btnNext:hover::after {
   transform: rotate(-30deg);
+}
+
+/*
+  여기서부터 코드 작성!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+*/
+
+/* 글씨 수정
+  - 노래 제목
+
+  font-size: 20px;
+  font-family: "arial";
+  color: #222;
+*/
+figure section article .inner .txt h2 {
+}
+
+/* 글씨 수정
+  - 노래 설명
+
+  font-size: 12px;
+  margin-bottom: 3vh;
+  color: #777;
+*/
+figure section article .inner .txt p {
+}
+
+/*
+  - 플레이어 전체 박스
+
+  border-radius: 10px;
+  background: #f0f7ff;
+  */
+figure section article .inner {
+  /*음악 플레이어 패널 콘텐츠 그룹*/
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  align-content: space-between; /*자식 콘텐츠의 안쪽 세로 여백을 균등 배치*/
+  flex-wrap: wrap;
+  padding: 5vh 2.5vw 8vh;
+  border: 1px solid black;
+  opacity: 0.6; /*투명도를 낮춰서 비활성화*/
+  transform: scale(0.8); /*축소시켜서 비솰성화*/
+  transition: opacity 1s, transform 1s;
+}
+
+/* 배경색 수정하기!!
+  - 전체 배경
+
+  background: linear-gradient(25deg, violet, pink);
+*/
+figure {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 글씨색 수정하기
+  - prev music 글씨 색
+  color: #fff;
+*/
+figure .btnPrev span {
+  font: 11px/1 "arial";
+  opacity: 1;
+  transform: translateX(30%);
+  transition: 0.5s;
+}
+
+/* 백그라운드 수정하기
+  - prev music 위 화살표 색
+
+  background: #fff;
+*/
+figure .btnPrev::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform-origin: left center;
+  transform: rotate(-180deg);
+  transition: 0.5s;
+  background: #000;
+}
+
+/* 백그라운드 수정하기
+  - prev music 아래 화살표 색
+
+  background: #fff;
+*/
+figure .btnPrev::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 50%;
+  left: 0px;
+  transform-origin: left center;
+  transform: rotate(180deg);
+  transition: 0.5s;
+  background: #000;
+}
+
+/* 글씨색 수정하기
+  - next music 글씨 색
+
+  color: #fff;
+*/
+figure .btnNext span {
+  font: 11px/1 "arial";
+  opacity: 1;
+  transform: translateX(-30%);
+  transition: 0.5s;
+}
+
+/* 백그라운드 수정하기
+  - next music 위 화살표 색
+
+  background: #fff;
+*/
+figure .btnNext::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform-origin: right center;
+  transform: rotate(180deg);
+  transition: 0.5s;
+  background: #000;
+}
+
+/* 백그라운드 수정하기
+  - next music 위 화살표 색
+
+  background: #fff;
+*/
+figure .btnNext::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  bottom: 50%;
+  left: 0px;
+  transform-origin: right center;
+  transform: rotate(-180deg);
+  transition: 0.5s;
+  background: #000;
 }
